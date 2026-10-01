@@ -376,7 +376,6 @@ def call_subscription_page(request):
 
 @csrf_exempt
 def payment_webhook(request):
-    # endpoint_secret = 'whsec_c23900210bd24c68ae42a90b040dbea9e91b3f8a3506936a541cc25bdf57c2a5'
     endpoint_secret = os.environ.get('WEBHOOK_SECRET')
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
